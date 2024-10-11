@@ -1,9 +1,23 @@
 #include <stdio.h>
 
-int main(void){
-    int number1, number2;
-    while(scanf("%d %d", &number1, &number2) != EOF){
-        // printf("%d\n", number1^number2);
-        printf("%d\n", (~number1&number2)|(number1&(~number2)));
+int countCorrectTea(int arr[], int T){
+    int count = 0;
+    for(int i=0; i<5; i++){
+        if(arr[i] == T){
+            count++;
+        }
     }
+    return count;
+}
+
+void main(){
+    int T;
+    int arr[5];
+
+    scanf("%d", &T);
+    for(int i=0; i<5; i++){
+        scanf("%d", &arr[i]);
+    }
+    printf("%d\n", countCorrectTea(arr, T));
+
 }
