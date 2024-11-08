@@ -1,37 +1,28 @@
+// #include <stdio.h>
+// #include <math.h>
+
+// int main(){
+//     double sa;
+    
+//     while(scanf("%lf", &sa) != EOF && sa != -1){
+//         double vol = pow((sqrt(sa / (1 + sqrt(3)))), 3) / (3 * sqrt(2));
+//         printf("%.4lf\n", vol);
+//     }
+// }
+
 #include <stdio.h>
-int main(){
-    int n,i,j;
+#include <math.h>
 
-printf("enter row:",n);
-scanf("%d", &n);
+int main() {
+    double sa;
+    const double c1 = 1 + sqrt(3);
+    const double c2 = 3 * sqrt(2);
 
-for(i=1;i<=n;i++)
-{
-    for(j=1;j<=2*n -1;j++){
-
-        if(j<=n+(i-1) && j>=n-(i-1))
-           {
-
-           printf("*");}
-        else{printf(" ");}
+    while (scanf("%lf", &sa) != EOF && sa != -1) {
+        double a = sqrt(sa / c1);
+        double vol = pow(a, 3) / c2;
+        printf("%.4lf\n", vol);
     }
-printf("\n");
+
+    return 0;
 }
-return 0;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
